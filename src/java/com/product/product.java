@@ -21,38 +21,64 @@ import javax.ws.rs.PUT;
  */
 @Path("generic")
 public class product {
+    private String productDescription;
+    private int quantity;
+    
 
-    @Context
-    private UriInfo context;
-
+    
     /**
      * Creates a new instance of product
      */
     public product() {
     }
 
-    public product(int aInt, String string, String string0, int aInt0) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+   public product(int id, String name, String description, int quantity){
+        this.productId=id;
+        this.productName=name;
+        this.productDescription=description;
+        this.quantity=quantity;
+        
     }
+
+    public String getProductDescription() {
+        return productDescription;
+    }
+
+    public void setProductDescription(String productDescription) {
+        this.productDescription = productDescription;
+    }
+
+    public int getQuantity() {
+        return quantity;
+    }
+
+    public void setQuantity(int quantity) {
+        this.quantity = quantity;
+    }
+
+    public int getProductId() {
+        return productId;
+    }
+
+    public void setProductId(int productId) {
+        this.productId = productId;
+    }
+
+    public String getProductName() {
+        return productName;
+    }
+
+    public void setProductName(String productName) {
+        this.productName = productName;
+    }
+    
+    protected int productId;
+
+    protected String productName;
 
     /**
      * Retrieves representation of an instance of com.product.product
      * @return an instance of java.lang.String
      */
-    @GET
-    @Produces("application/xml")
-    public String getXml() {
-        //TODO return proper representation object
-        throw new UnsupportedOperationException();
-    }
-
-    /**
-     * PUT method for updating or creating an instance of product
-     * @param content representation for the resource
-     * @return an HTTP response with content of the updated or created resource.
-     */
-    @PUT
-    @Consumes("application/xml")
-    public void putXml(String content) {
-    }
+    
 }
